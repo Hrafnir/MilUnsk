@@ -1,0 +1,51 @@
+<!-- Version: #2 -->
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HV-Bortforklaring</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo-container">
+            <img src="HVlogo.png" alt="HV Logo" id="app-logo">
+        </div>
+
+        <!-- Tittel -->
+        <header>
+            <h1>AVVIKSRAPPORT</h1>
+            <p class="subtitle">AUTOMATISK UNNSKYLDNINGSGENERATOR</p>
+        </header>
+
+        <!-- Unnskyldning Visning -->
+        <div class="display-box">
+            <p id="excuse-text">Systemet er klart. Venter på input...</p>
+        </div>
+
+        <!-- Kontrollpanel -->
+        <div class="controls">
+            <button id="generate-btn" class="btn primary-btn">GENERER UNNSKYLDNING</button>
+            <button id="copy-btn" class="btn secondary-btn" disabled>KOPIER TIL UTKLIPPSTAVLE</button>
+        </div>
+
+        <!-- Status/Feedback melding (f.eks "Kopiert!") -->
+        <div id="status-msg" class="hidden"></div>
+        
+        <footer>
+            <p>AR 1:1 - FELTKLAR VERSJON</p>
+        </footer>
+    </div>
+
+    <!-- Skript -->
+    <!-- Først laster vi databasen -->
+    <script src="excuses.js"></script>
+    <!-- Så laster vi logikken -->
+    <script src="script.js"></script>
+
+</body>
+</html>
+<!-- Version: #2 -->
