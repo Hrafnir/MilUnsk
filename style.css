@@ -1,0 +1,183 @@
+/* Version: #3 */
+/* === GENERELT OPPSETT === */
+:root {
+    --mil-green-dark: #2F3528;   /* Mørk oliven */
+    --mil-green-light: #4B5320;  /* Standard hær-grønn */
+    --mil-text: #E0E0E0;         /* Off-white tekst */
+    --terminal-bg: #111;         /* Nesten svart skjerm */
+    --terminal-text: #00FF41;    /* Klassisk CRT grønn */
+    --btn-primary: #556B2F;      /* Dark Olive Green */
+    --btn-hover: #6B8E23;        /* Olive Drab */
+    --btn-border: #1A1A1A;       /* Mørk kant */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--mil-green-dark);
+    color: var(--mil-text);
+    font-family: "Courier New", Courier, monospace; /* Skrivemaskin/Terminal stil */
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px; /* Ser ut som en håndholdt enhet på desktop */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* === LOGO === */
+.logo-container {
+    margin-bottom: 10px;
+}
+
+#app-logo {
+    width: 120px;
+    height: auto;
+    display: block;
+    /* Legger til en enkel skygge for dybde */
+    filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.5));
+}
+
+/* === HEADER === */
+header {
+    text-align: center;
+    border-bottom: 2px solid var(--mil-text);
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 0px #000;
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    letter-spacing: 1px;
+}
+
+/* === DISPLAY BOX (UNNSKYLDNINGEN) === */
+.display-box {
+    background-color: var(--terminal-bg);
+    border: 4px solid #333;
+    border-radius: 5px;
+    padding: 20px;
+    width: 100%;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
+    position: relative;
+}
+
+/* En liten detalj som får det til å se ut som en skjerm */
+.display-box::before {
+    content: "STATUS: ACTIVE";
+    position: absolute;
+    top: 5px;
+    left: 8px;
+    font-size: 0.6rem;
+    color: var(--terminal-text);
+    opacity: 0.5;
+}
+
+#excuse-text {
+    color: var(--terminal-text);
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.4);
+}
+
+/* === KONTROLLPANEL === */
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.btn {
+    padding: 15px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 3px solid var(--btn-border);
+    cursor: pointer;
+    transition: all 0.1s ease;
+    box-shadow: 3px 3px 0px rgba(0,0,0,0.5);
+    border-radius: 2px;
+}
+
+.btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px rgba(0,0,0,0.5);
+}
+
+.primary-btn {
+    background-color: var(--btn-primary);
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: var(--btn-hover);
+}
+
+.secondary-btn {
+    background-color: #555;
+    color: #ccc;
+}
+
+.secondary-btn:hover:not(:disabled) {
+    background-color: #666;
+    color: white;
+}
+
+.secondary-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+    border-color: #444;
+}
+
+/* === STATUS MELDING === */
+#status-msg {
+    height: 20px;
+    color: #FFFF00; /* Gul varseltekst */
+    font-weight: bold;
+    text-align: center;
+    font-size: 0.9rem;
+    transition: opacity 0.3s ease;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+/* === FOOTER === */
+footer {
+    margin-top: auto;
+    font-size: 0.7rem;
+    opacity: 0.5;
+    text-align: center;
+}
+
+/* Version: #3 */
